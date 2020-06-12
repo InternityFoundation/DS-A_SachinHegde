@@ -51,29 +51,40 @@ struct node {
 };
 
 */
-int getDepth(struct node* root){
-    if(root==NULL){
-        return 0;
-    }
-    else{
-   int lh=getDepth(root->left);
-   int rh=getDepth(root->right);
-    if(lh>rh){
-    return lh+1;
-    }
-    else{
-        return rh+1;
-    }
-    }
+void printvalue(struct node *root,int level);
+void levelOrder(struct node *root);
+int maxDepth(struct node *root);
+
+void printvalue(struct node *root,int level){
+if(root==NULL){
+    return;
 }
-int getHeight(struct node* root) {
-    // Write your code here
-    int ans=0;
-    ans=getDepth(root);
-    if(ans!=0){
-    return ans-1;}
-    else{
-        return 0;
-    }
+if(level==1){
+    printf("%d ",root->data);
 }
+else if(level>1){
+printvalue(root->left,level-1);
+printvalue(root->right,level-1);
+}
+}
+void levelOrder( struct node *root) {
+int h=maxDepth(root);
+int i;
+for(i=1;i<=h;i++){
+printvalue(root,i);
+}
+}
+int maxDepth(struct node *root){
+   if (root==NULL) 
+        return 0; 
+    else
+    { 
+        int lheight = maxDepth(root->left); 
+        int rheight = maxDepth(root->right);
+        if (lheight > rheight) 
+            return(lheight+1); 
+        else return(rheight+1); 
+    } 
+}
+
 

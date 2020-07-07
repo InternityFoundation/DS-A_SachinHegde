@@ -192,10 +192,11 @@ while(True):
 
   print()
 
+'''
 # Rachit
 
 # def deenc()
-
+Optimized Hill cipher algorithm
 
 def solve(mat, key):
   n = len(mat)
@@ -397,4 +398,4 @@ while(True):
 
     if(type==2):
         resultd=hillcipher_decrypt(string,key)
-        print("The Decrypted message by Hill cipher algortihm is: ","".join(resultd))
+        print("The Decrypted message by Hill cipher algortihm is: ","".join(resultd))'''
